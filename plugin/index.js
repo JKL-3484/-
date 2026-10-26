@@ -712,7 +712,7 @@ async function getDrivesFromCim() {
       maxBuffer: 1024 * 1024,
       encoding: "utf8"
     });
-    const text = String(stdout || "").trim();
+    const text = String(stdout || "").replace(/^\uFEFF/, "").trim();
     if (text === "") return [];
     const parsed = JSON.parse(text);
     const list = Array.isArray(parsed) ? parsed : [parsed];
