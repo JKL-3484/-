@@ -1143,7 +1143,7 @@ function buildRoles(drives, downloads) {
       : "只检测到系统盘 " + systemLetter + "；建议加一块数据盘，再把下载/大软件/项目文件放过去。";
   if (system && systemFreePct < 15) {
     verdict = systemLetter + " 盘剩余空间偏低，先清绿色项；不要急着搬系统目录。";
-  } else if (sys && sys.status !== "green") {
+  } else if (dataDrives.length > 0 && sys && sys.status !== "green") {
     verdict = "下载文件夹还在系统盘，把它改到数据盘是最省力的分工。";
   } else if (wechat?.status === "yellow" || qq?.status === "yellow") {
     verdict = "聊天文件还在系统盘，建议用微信/QQ 自己的文件管理迁到数据盘。";
@@ -1206,7 +1206,7 @@ function buildPlan(drives, downloads, buckets) {
     });
   }
 
-  if (sys && sys.status !== "green") {
+  if (dataDrives.length > 0 && sys && sys.status !== "green") {
     steps.push({
       id: "move-downloads",
       title: "把系统“下载”文件夹迁到 " + primaryData + " 盘",
@@ -1221,7 +1221,7 @@ function buildPlan(drives, downloads, buckets) {
     });
   }
 
-  if (edge && edge.status === "yellow" && /每次询问/.test(edge.statusText)) {
+  if (dataDrives.length > 0 && edge && edge.status === "yellow" && /每次询问/.test(edge.statusText)) {
     steps.push({
       id: "edge-prompt",
       title: "关掉 Edge 的“每次询问保存位置”",
@@ -1236,7 +1236,7 @@ function buildPlan(drives, downloads, buckets) {
     });
   }
 
-  if (wechat && wechat.status === "yellow") {
+  if (dataDrives.length > 0 && wechat && wechat.status === "yellow") {
     steps.push({
       id: "wechat-move",
       title: "把微信文件目录改到 " + primaryData + " 盘",
@@ -1251,7 +1251,7 @@ function buildPlan(drives, downloads, buckets) {
     });
   }
 
-  if (qq && qq.status === "yellow") {
+  if (dataDrives.length > 0 && qq && qq.status === "yellow") {
     steps.push({
       id: "qq-move",
       title: "把 QQ 文件目录改到 " + primaryData + " 盘",
@@ -1266,7 +1266,7 @@ function buildPlan(drives, downloads, buckets) {
     });
   }
 
-  if (steam && steam.status === "yellow") {
+  if (dataDrives.length > 0 && steam && steam.status === "yellow") {
     steps.push({
       id: "steam-move",
       title: "把 Steam 游戏库移到 " + primaryData + " 盘",
