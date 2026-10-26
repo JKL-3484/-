@@ -56,7 +56,13 @@
 dsh plugin --profile desktop add github:JKL-3484/-
 ```
 
-> 仓库名就是一个 `-`。如果 DSH 的 `github:` 解析不了这个特殊名字，用下面的 clone + link 方式。
+> 仓库名就是一个 `-`。如果 DSH 的 `github:` 解析不了这个特殊名字，可以改用完整地址：
+>
+> ```powershell
+> dsh plugin --profile desktop add https://github.com/JKL-3484/-
+> ```
+>
+> 或者用下面的 clone + link 方式。
 
 ### 本地开发安装
 
