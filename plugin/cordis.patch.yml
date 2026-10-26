@@ -1,0 +1,5 @@
+# dsh-drive-manager 的 bundle patch：把插件挂进 web 插件名册。
+# 同时加载 host 半（/api/drive-manager/* 只读接口）与 client 半（左侧栏图标 + 主区面板）。
+- insert:
+    - id: drive-manager
+      name: 'dsh-drive-manager'
