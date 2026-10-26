@@ -53,13 +53,15 @@
 ### 从 GitHub 安装
 
 ```powershell
-dsh plugin --profile desktop add github:<your-github-name>/dsh-drive-manager
+dsh plugin --profile desktop add github:JKL-3484/-
 ```
+
+> 仓库名就是一个 `-`。如果 DSH 的 `github:` 解析不了这个特殊名字，用下面的 clone + link 方式。
 
 ### 本地开发安装
 
 ```powershell
-git clone https://github.com/<your-github-name>/dsh-drive-manager.git
+git clone https://github.com/JKL-3484/-.git
 dsh plugin --profile desktop add link:<仓库绝对路径>
 ```
 

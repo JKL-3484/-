@@ -29,6 +29,14 @@
     }
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JKL-3484/-.git"
+  },
+  "homepage": "https://github.com/JKL-3484/-#readme",
+  "bugs": {
+    "url": "https://github.com/JKL-3484/-/issues"
+  },
   "keywords": [
     "dsh",
     "dsh-plugin",
